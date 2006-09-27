@@ -1,17 +1,17 @@
 Summary:	X protocol C-language Binding library
 Summary(pl):	XCB - biblioteka dowi±zañ jêzyka C do protoko³u X
 Name:		libxcb
-Version:	0.9
+Version:	0.9.91
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	578037c76d791d4623f0f8b3e14fbabc
+# Source0-md5:	8bb01876468dd08d8e921e32ec9ff116
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	check >= 0.8.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	xcb-proto >= 0.9
+BuildRequires:	xcb-proto >= 0.9.91
 BuildRequires:	xorg-lib-libXau-devel
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -72,15 +72,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING
-%attr(755,root,root) %{_libdir}/libXCB*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libxcb*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libXCB*.so
-%{_libdir}/libXCB*.la
-%{_includedir}/X11/XCB/*.h
+%attr(755,root,root) %{_libdir}/libxcb*.so
+%{_libdir}/libxcb*.la
+%{_includedir}/xcb
 %{_pkgconfigdir}/xcb*.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libXCB*.a
+%{_libdir}/libxcb*.a
