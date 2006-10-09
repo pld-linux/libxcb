@@ -1,17 +1,17 @@
 Summary:	X protocol C-language Binding library
 Summary(pl):	XCB - biblioteka dowi±zañ jêzyka C do protoko³u X
 Name:		libxcb
-Version:	0.9.91
+Version:	0.9.92
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	8bb01876468dd08d8e921e32ec9ff116
+# Source0-md5:	6f01c8fa200deebb20b019f7401a2606
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	check >= 0.8.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	xcb-proto >= 0.9.91
+BuildRequires:	xcb-proto >= 0.9.92
 BuildRequires:	xorg-lib-libXau-devel
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
