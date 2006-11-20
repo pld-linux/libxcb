@@ -85,6 +85,9 @@ Statyczna biblioteka XCB.
 %prep
 %setup -q
 
+# libxslt 1.1.18 is broken and segfaults on regeneration
+touch src/*.[ch]
+
 %build
 %configure
 %{__make}
