@@ -99,6 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -rf $RPM_BUILD_ROOT%{_docdir}/libxcb
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -112,6 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%doc doc/{manual,tutorial}
 %attr(755,root,root) %{_libdir}/libxcb*.so
 %{_libdir}/libxcb*.la
 %{_includedir}/xcb
