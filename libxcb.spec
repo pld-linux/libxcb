@@ -9,6 +9,7 @@ Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # Source0-md5:	0eb951fd0fa9542dbe4fc3530b81a3b6
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	check >= 0.8.2
+BuildRequires:	doxygen
 BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
