@@ -1,5 +1,5 @@
 Summary:	X protocol C-language Binding library
-Summary(pl.UTF-8):   XCB - biblioteka dowiązań języka C do protokołu X
+Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
 Version:	1.0
 Release:	4
@@ -60,7 +60,7 @@ XCB.
 
 %package devel
 Summary:	Header files for XCB library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki XCB
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki XCB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libpthread-stubs
@@ -76,7 +76,7 @@ Pliki nagłówkowe biblioteki XCB.
 
 %package static
 Summary:	Static XCB library
-Summary(pl.UTF-8):   Statyczna biblioteka XCB
+Summary(pl.UTF-8):	Statyczna biblioteka XCB
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
