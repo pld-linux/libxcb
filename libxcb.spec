@@ -1,5 +1,5 @@
 Summary:	X protocol C-language Binding library
-Summary(pl):	XCB - biblioteka dowi±zañ jêzyka C do protoko³u X
+Summary(pl.UTF-8):   XCB - biblioteka dowiÄ…zaÅ„ jÄ™zyka C do protokoÅ‚u X
 Name:		libxcb
 Version:	1.0
 Release:	4
@@ -37,30 +37,30 @@ requests and receive responses with both, which eases porting to XCB.
 However, client programs, libraries, and toolkits will gain the most
 benefit from a native XCB port.
 
-%description -l pl
-XCB - biblioteka dowi±zañ jêzyka C do protoko³u X.
+%description -l pl.UTF-8
+XCB - biblioteka dowiÄ…zaÅ„ jÄ™zyka C do protokoÅ‚u X.
 
-libxcb udostêpnia interfejs do protoko³u X Window System, maj±cy
-zast±piæ aktualny interfejs Xlib. Ma kilka zalet w stosunku do Xliba,
+libxcb udostÄ™pnia interfejs do protokoÅ‚u X Window System, majÄ…cy
+zastÄ…piÄ‡ aktualny interfejs Xlib. Ma kilka zalet w stosunku do Xliba,
 w tym:
-- rozmiar: ma³a biblioteka i niewielki narzut pamiêciowy
-- ukrywanie opó¼nieñ: kolejkowanie kilku ¿±dañ i oczekiwanie na
-  odpowied¼ pó¼niej
-- bezpo¶redni dostêp do protoko³u: odwzorowanie 1-1 miêdzy interfejsem
-  a protoko³em
-- sprawdzon± obs³ugê w±tków: bezpo¶redni dostêp do XCB z wielu w±tków
-- ³atwe implementowanie rozszerzeñ: automatyczne generowanie
-  interfejsów z XML-XCB
+- rozmiar: maÅ‚a biblioteka i niewielki narzut pamiÄ™ciowy
+- ukrywanie opÃ³ÅºnieÅ„: kolejkowanie kilku Å¼Ä…daÅ„ i oczekiwanie na
+  odpowiedÅº pÃ³Åºniej
+- bezpoÅ›redni dostÄ™p do protokoÅ‚u: odwzorowanie 1-1 miÄ™dzy interfejsem
+  a protokoÅ‚em
+- sprawdzonÄ… obsÅ‚ugÄ™ wÄ…tkÃ³w: bezpoÅ›redni dostÄ™p do XCB z wielu wÄ…tkÃ³w
+- Å‚atwe implementowanie rozszerzeÅ„: automatyczne generowanie
+  interfejsÃ³w z XML-XCB
 
-Xlib mo¿e tak¿e u¿ywaæ XCB jako warstwy transportowej, pozwalaj±c
-programom wykonywaæ ¿±dania i odbieraæ odpowiedzi poprzez oba
-interfejsy, co u³atwia przechodzenie na XCB. Jednak programy
-klienckie, biblioteki i toolkity zyskaj± wiêcej na natywnym porcie
+Xlib moÅ¼e takÅ¼e uÅ¼ywaÄ‡ XCB jako warstwy transportowej, pozwalajÄ…c
+programom wykonywaÄ‡ Å¼Ä…dania i odbieraÄ‡ odpowiedzi poprzez oba
+interfejsy, co uÅ‚atwia przechodzenie na XCB. Jednak programy
+klienckie, biblioteki i toolkity zyskajÄ… wiÄ™cej na natywnym porcie
 XCB.
 
 %package devel
 Summary:	Header files for XCB library
-Summary(pl):	Pliki nag³ówkowe biblioteki XCB
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki XCB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libpthread-stubs
@@ -71,19 +71,19 @@ Requires:	xorg-proto-xproto-devel
 %description devel
 Header files for XCB library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki XCB.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki XCB.
 
 %package static
 Summary:	Static XCB library
-Summary(pl):	Statyczna biblioteka XCB
+Summary(pl.UTF-8):   Statyczna biblioteka XCB
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static XCB library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka XCB.
 
 %prep
