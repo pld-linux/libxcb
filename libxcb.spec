@@ -7,6 +7,7 @@ License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # Source0-md5:	0eb951fd0fa9542dbe4fc3530b81a3b6
+# This is a HACK to workaround broken apps like java
 Patch0:		%{name}-no-assert-on-lock.patch
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	check >= 0.8.2
