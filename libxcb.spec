@@ -10,8 +10,11 @@ Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # This is a HACK to workaround broken apps like java
 Patch0:		%{name}-no-assert-on-lock.patch
 URL:		http://xcb.freedesktop.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	check >= 0.8.2
 BuildRequires:	doxygen
+BuildRequires:	libtool
 BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
@@ -95,6 +98,10 @@ Statyczna biblioteka XCB.
 touch src/*.[ch]
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
