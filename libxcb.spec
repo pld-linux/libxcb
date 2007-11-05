@@ -17,7 +17,7 @@ BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	xcb-proto >= 1.1
-BuildRequires:	xorg-lib-libXau-devel
+BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
