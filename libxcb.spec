@@ -1,14 +1,12 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.0
-Release:	4
+Version:	1.1
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	0eb951fd0fa9542dbe4fc3530b81a3b6
-# This is a HACK to workaround broken apps like java
-Patch0:		%{name}-no-assert-on-lock.patch
+# Source0-md5:	9310b02433273d75d42f10da3c7455aa
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -18,7 +16,7 @@ BuildRequires:	libtool
 BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	xcb-proto >= 1.0
+BuildRequires:	xcb-proto >= 1.1
 BuildRequires:	xorg-lib-libXau-devel
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -92,7 +90,6 @@ Statyczna biblioteka XCB.
 
 %prep
 %setup -q
-%patch0 -p0
 
 # libxslt 1.1.18 is broken and segfaults on regeneration
 touch src/*.[ch]
