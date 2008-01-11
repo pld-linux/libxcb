@@ -120,6 +120,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING NEWS README
 %attr(755,root,root) %{_libdir}/libxcb*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb.so.1
+%attr(755,root,root) %ghost %{_libdir}/libxcb-*.so.0
 
 %files devel
 %defattr(644,root,root,755)
