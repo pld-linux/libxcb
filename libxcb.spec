@@ -2,11 +2,13 @@ Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
 Version:	1.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # Source0-md5:	9310b02433273d75d42f10da3c7455aa
+# http://patches.ubuntu.com/libx/libxcb/extracted/
+Patch0:		%{name}-sloppy-lock.patch
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -90,6 +92,7 @@ Statyczna biblioteka XCB.
 
 %prep
 %setup -q
+%patch0 -p1
 
 # libxslt 1.1.18 is broken and segfaults on regeneration
 touch src/*.[ch]
