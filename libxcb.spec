@@ -12,6 +12,7 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
 BuildRequires:	doxygen
+BuildRequires:	graphviz
 BuildRequires:	libtool
 BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
