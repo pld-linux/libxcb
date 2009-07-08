@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	graphviz	# do not require graphviz in doc regeneration
+
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
@@ -12,7 +15,9 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
 BuildRequires:	doxygen
+%if %{with graphviz}
 BuildRequires:	graphviz
+%endif
 BuildRequires:	libtool
 BuildRequires:	libpthread-stubs
 BuildRequires:	libxslt-progs
@@ -91,6 +96,9 @@ Statyczna biblioteka XCB.
 
 %prep
 %setup -q
+%if %{without graphviz}
+%{__sed} -i -e 's/HAVE_DOT               = YES/HAVE_DOT               = NO/g' doc/xcb.doxygen.in
+%endif
 
 %build
 %{__libtoolize}
