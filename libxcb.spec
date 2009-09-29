@@ -1,6 +1,7 @@
+#
 # Conditional build:
 %bcond_without	graphviz	# do not require graphviz in doc regeneration
-
+#
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
@@ -22,6 +23,7 @@ BuildRequires:	libtool
 BuildRequires:	libpthread-stubs-devel >= 0.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
+BuildRequires:	python >= 1:2.5
 BuildRequires:	xcb-proto >= 1.5
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
@@ -71,7 +73,7 @@ Summary:	Header files for XCB library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki XCB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libpthread-stubs
+Requires:	libpthread-stubs-devel >= 0.2
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-xproto-devel
