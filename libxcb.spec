@@ -16,14 +16,13 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
 BuildRequires:	doxygen
-%if %{with graphviz}
-BuildRequires:	graphviz
-%endif
+%{?with_graphviz:BuildRequires:	graphviz}
 BuildRequires:	libpthread-stubs >= 0.3
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.5
+BuildRequires:	python-modules
 BuildRequires:	xcb-proto >= 1.5
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
