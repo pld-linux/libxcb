@@ -1,5 +1,6 @@
 #
 # Conditional build:
+%bcond_without	apidocs		# do not build and package API docs
 %bcond_without	graphviz	# do not require graphviz in doc regeneration
 #
 Summary:	X protocol C-language Binding library
@@ -95,6 +96,17 @@ Static XCB library.
 %description static -l pl.UTF-8
 Statyczna biblioteka XCB.
 
+%package apidocs
+Summary:	XCB library API documentation
+Summary(pl.UTF-8):	Dokumentacja API biblioteki XCB
+Group:		Documentation
+
+%description apidocs
+API and internal documentation for XCB library.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API biblioteki XCB.
+
 %prep
 %setup -q
 %if %{without graphviz}
@@ -132,7 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/{manual,tutorial}
+%doc doc/tutorial
 %attr(755,root,root) %{_libdir}/libxcb*.so
 %{_libdir}/libxcb*.la
 %{_includedir}/xcb
@@ -141,3 +153,9 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libxcb*.a
+
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
+%doc doc/manual/*
+%endif
