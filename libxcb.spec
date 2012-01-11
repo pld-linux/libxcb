@@ -22,8 +22,8 @@ BuildRequires:	libpthread-stubs >= 0.3
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	python >= 1:2.5
-BuildRequires:	python-modules
+BuildRequires:	python >= 1:2.6
+BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	xcb-proto >= 1.7
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
@@ -33,8 +33,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X protocol C-language Binding library.
 
-libxcb provides an interface to the X Window System protocol, slated to
-replace the current Xlib interface. It has several advantages over
+libxcb provides an interface to the X Window System protocol, slated
+to replace the current Xlib interface. It has several advantages over
 Xlib, including:
 - size: small library and lower memory footprint
 - latency hiding: batch several requests and wait for the replies later
@@ -118,7 +118,8 @@ Dokumentacja API biblioteki XCB.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
