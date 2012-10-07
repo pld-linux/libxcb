@@ -6,12 +6,12 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.8.1
+Version:	1.9
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	9da03df9e2f4c048202920d9f6a7e123
+# Source0-md5:	2b05856e9d1cb37836aae7406f2f4ce2
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -24,7 +24,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.7
+BuildRequires:	xcb-proto >= 1.8
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -139,21 +139,128 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING NEWS README
-%attr(755,root,root) %{_libdir}/libxcb*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libxcb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb.so.1
-%attr(755,root,root) %ghost %{_libdir}/libxcb-*.so.0
+%attr(755,root,root) %{_libdir}/libxcb-composite.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-composite.so.0
+%attr(755,root,root) %{_libdir}/libxcb-damage.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-damage.so.0
+%attr(755,root,root) %{_libdir}/libxcb-dpms.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-dpms.so.0
+%attr(755,root,root) %{_libdir}/libxcb-dri2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-dri2.so.0
+%attr(755,root,root) %{_libdir}/libxcb-glx.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-glx.so.0
+%attr(755,root,root) %{_libdir}/libxcb-randr.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-randr.so.0
+%attr(755,root,root) %{_libdir}/libxcb-record.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-record.so.0
+%attr(755,root,root) %{_libdir}/libxcb-render.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-render.so.0
+%attr(755,root,root) %{_libdir}/libxcb-res.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-res.so.0
+%attr(755,root,root) %{_libdir}/libxcb-screensaver.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-screensaver.so.0
+%attr(755,root,root) %{_libdir}/libxcb-shape.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-shape.so.0
+%attr(755,root,root) %{_libdir}/libxcb-shm.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-shm.so.0
+%attr(755,root,root) %{_libdir}/libxcb-sync.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-sync.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xevie.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xevie.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xf86dri.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xf86dri.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xfixes.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xfixes.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xinerama.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xinerama.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xprint.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xprint.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xtest.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xtest.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xv.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xv.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xvmc.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xvmc.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/tutorial
-%attr(755,root,root) %{_libdir}/libxcb*.so
-%{_libdir}/libxcb*.la
+%attr(755,root,root) %{_libdir}/libxcb.so
+%attr(755,root,root) %{_libdir}/libxcb-composite.so
+%attr(755,root,root) %{_libdir}/libxcb-damage.so
+%attr(755,root,root) %{_libdir}/libxcb-dpms.so
+%attr(755,root,root) %{_libdir}/libxcb-dri2.so
+%attr(755,root,root) %{_libdir}/libxcb-glx.so
+%attr(755,root,root) %{_libdir}/libxcb-randr.so
+%attr(755,root,root) %{_libdir}/libxcb-record.so
+%attr(755,root,root) %{_libdir}/libxcb-render.so
+%attr(755,root,root) %{_libdir}/libxcb-res.so
+%attr(755,root,root) %{_libdir}/libxcb-screensaver.so
+%attr(755,root,root) %{_libdir}/libxcb-shape.so
+%attr(755,root,root) %{_libdir}/libxcb-shm.so
+%attr(755,root,root) %{_libdir}/libxcb-sync.so
+%attr(755,root,root) %{_libdir}/libxcb-xevie.so
+%attr(755,root,root) %{_libdir}/libxcb-xf86dri.so
+%attr(755,root,root) %{_libdir}/libxcb-xfixes.so
+%attr(755,root,root) %{_libdir}/libxcb-xinerama.so
+%attr(755,root,root) %{_libdir}/libxcb-xprint.so
+%attr(755,root,root) %{_libdir}/libxcb-xtest.so
+%attr(755,root,root) %{_libdir}/libxcb-xv.so
+%attr(755,root,root) %{_libdir}/libxcb-xvmc.so
+%{_libdir}/libxcb.la
+%{_libdir}/libxcb-composite.la
+%{_libdir}/libxcb-damage.la
+%{_libdir}/libxcb-dpms.la
+%{_libdir}/libxcb-dri2.la
+%{_libdir}/libxcb-glx.la
+%{_libdir}/libxcb-randr.la
+%{_libdir}/libxcb-record.la
+%{_libdir}/libxcb-render.la
+%{_libdir}/libxcb-res.la
+%{_libdir}/libxcb-screensaver.la
+%{_libdir}/libxcb-shape.la
+%{_libdir}/libxcb-shm.la
+%{_libdir}/libxcb-sync.la
+%{_libdir}/libxcb-xevie.la
+%{_libdir}/libxcb-xf86dri.la
+%{_libdir}/libxcb-xfixes.la
+%{_libdir}/libxcb-xinerama.la
+%{_libdir}/libxcb-xprint.la
+%{_libdir}/libxcb-xtest.la
+%{_libdir}/libxcb-xv.la
+%{_libdir}/libxcb-xvmc.la
 %{_includedir}/xcb
 %{_pkgconfigdir}/xcb*.pc
+%{_mandir}/man3/xcb-examples.3*
+%{_mandir}/man3/xcb-requests.3*
+%{_mandir}/man3/xcb_*.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libxcb*.a
+%{_libdir}/libxcb.a
+%{_libdir}/libxcb-composite.a
+%{_libdir}/libxcb-damage.a
+%{_libdir}/libxcb-dpms.a
+%{_libdir}/libxcb-dri2.a
+%{_libdir}/libxcb-glx.a
+%{_libdir}/libxcb-randr.a
+%{_libdir}/libxcb-record.a
+%{_libdir}/libxcb-render.a
+%{_libdir}/libxcb-res.a
+%{_libdir}/libxcb-screensaver.a
+%{_libdir}/libxcb-shape.a
+%{_libdir}/libxcb-shm.a
+%{_libdir}/libxcb-sync.a
+%{_libdir}/libxcb-xevie.a
+%{_libdir}/libxcb-xf86dri.a
+%{_libdir}/libxcb-xfixes.a
+%{_libdir}/libxcb-xinerama.a
+%{_libdir}/libxcb-xprint.a
+%{_libdir}/libxcb-xtest.a
+%{_libdir}/libxcb-xv.a
+%{_libdir}/libxcb-xvmc.a
 
 %if %{with apidocs}
 %files apidocs
