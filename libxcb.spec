@@ -6,12 +6,12 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.8.1
+Version:	1.9
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	9da03df9e2f4c048202920d9f6a7e123
+# Source0-md5:	2b05856e9d1cb37836aae7406f2f4ce2
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -24,7 +24,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.7
+BuildRequires:	xcb-proto >= 1.8
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -150,6 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb*.la
 %{_includedir}/xcb
 %{_pkgconfigdir}/xcb*.pc
+%{_mandir}/man3/xcb*.3*
 
 %files static
 %defattr(644,root,root,755)
