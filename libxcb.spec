@@ -6,12 +6,12 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.9
+Version:	1.9.1
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	2b05856e9d1cb37836aae7406f2f4ce2
+# Source0-md5:	ed632cb0dc31b6fbd7ea5c0f931cf5a4
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -119,6 +119,8 @@ Dokumentacja API biblioteki XCB.
 %{__autoconf}
 %{__automake}
 %configure \
+	--enable-selinux \
+	--enable-xkb \
 	--disable-silent-rules
 %{__make}
 
@@ -183,6 +185,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xv.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xvmc.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xvmc.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xkb.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xkb.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xselinux.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xselinux.so.0
 
 %files devel
 %defattr(644,root,root,755)
@@ -205,7 +211,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libxcb-xf86dri.so
 %attr(755,root,root) %{_libdir}/libxcb-xfixes.so
 %attr(755,root,root) %{_libdir}/libxcb-xinerama.so
+%attr(755,root,root) %{_libdir}/libxcb-xkb.so
 %attr(755,root,root) %{_libdir}/libxcb-xprint.so
+%attr(755,root,root) %{_libdir}/libxcb-xselinux.so
 %attr(755,root,root) %{_libdir}/libxcb-xtest.so
 %attr(755,root,root) %{_libdir}/libxcb-xv.so
 %attr(755,root,root) %{_libdir}/libxcb-xvmc.so
@@ -227,7 +235,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-xf86dri.la
 %{_libdir}/libxcb-xfixes.la
 %{_libdir}/libxcb-xinerama.la
+%{_libdir}/libxcb-xkb.la
 %{_libdir}/libxcb-xprint.la
+%{_libdir}/libxcb-xselinux.la
 %{_libdir}/libxcb-xtest.la
 %{_libdir}/libxcb-xv.la
 %{_libdir}/libxcb-xvmc.la
@@ -257,7 +267,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-xf86dri.a
 %{_libdir}/libxcb-xfixes.a
 %{_libdir}/libxcb-xinerama.a
+%{_libdir}/libxcb-xkb.a
 %{_libdir}/libxcb-xprint.a
+%{_libdir}/libxcb-xselinux.a
 %{_libdir}/libxcb-xtest.a
 %{_libdir}/libxcb-xv.a
 %{_libdir}/libxcb-xvmc.a
