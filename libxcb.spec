@@ -28,6 +28,7 @@ BuildRequires:	xcb-proto >= 1.8
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
+Requires:	xorg-lib-libXau >= 0.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -74,7 +75,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki XCB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libpthread-stubs >= 0.3
-Requires:	xorg-lib-libXau-devel
+Requires:	xorg-lib-libXau-devel >= 0.99.2
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-xproto-devel
 
