@@ -6,12 +6,12 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.9.1
+Version:	1.9.3
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed632cb0dc31b6fbd7ea5c0f931cf5a4
+# Source0-md5:	1ca999ca94f760d917ef2d8466a88742
 URL:		http://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -24,7 +24,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.8
+BuildRequires:	xcb-proto >= 1.9
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -152,8 +152,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libxcb-dpms.so.0
 %attr(755,root,root) %{_libdir}/libxcb-dri2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-dri2.so.0
+%attr(755,root,root) %{_libdir}/libxcb-dri3.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-dri3.so.0
 %attr(755,root,root) %{_libdir}/libxcb-glx.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-glx.so.0
+%attr(755,root,root) %{_libdir}/libxcb-present.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-present.so.0
 %attr(755,root,root) %{_libdir}/libxcb-randr.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-randr.so.0
 %attr(755,root,root) %{_libdir}/libxcb-record.so.*.*.*
@@ -199,7 +203,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libxcb-damage.so
 %attr(755,root,root) %{_libdir}/libxcb-dpms.so
 %attr(755,root,root) %{_libdir}/libxcb-dri2.so
+%attr(755,root,root) %{_libdir}/libxcb-dri3.so
 %attr(755,root,root) %{_libdir}/libxcb-glx.so
+%attr(755,root,root) %{_libdir}/libxcb-present.so
 %attr(755,root,root) %{_libdir}/libxcb-randr.so
 %attr(755,root,root) %{_libdir}/libxcb-record.so
 %attr(755,root,root) %{_libdir}/libxcb-render.so
@@ -223,7 +229,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-damage.la
 %{_libdir}/libxcb-dpms.la
 %{_libdir}/libxcb-dri2.la
+%{_libdir}/libxcb-dri3.la
 %{_libdir}/libxcb-glx.la
+%{_libdir}/libxcb-present.la
 %{_libdir}/libxcb-randr.la
 %{_libdir}/libxcb-record.la
 %{_libdir}/libxcb-render.la
@@ -255,7 +263,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-damage.a
 %{_libdir}/libxcb-dpms.a
 %{_libdir}/libxcb-dri2.a
+%{_libdir}/libxcb-dri3.a
 %{_libdir}/libxcb-glx.a
+%{_libdir}/libxcb-present.a
 %{_libdir}/libxcb-randr.a
 %{_libdir}/libxcb-record.a
 %{_libdir}/libxcb-render.a
