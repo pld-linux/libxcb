@@ -6,14 +6,14 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.9.3
+Version:	1.10
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	1ca999ca94f760d917ef2d8466a88742
+# Source0-md5:	074c335cc4453467eeb234e3dadda700
 URL:		http://xcb.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
 BuildRequires:	doxygen
@@ -24,7 +24,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.9
+BuildRequires:	xcb-proto >= 1.10
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -121,7 +121,6 @@ Dokumentacja API biblioteki XCB.
 %{__automake}
 %configure \
 	--enable-selinux \
-	--enable-xkb \
 	--disable-silent-rules
 %{__make}
 
@@ -173,7 +172,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libxcb-shm.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-shm.so.0
 %attr(755,root,root) %{_libdir}/libxcb-sync.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxcb-sync.so.0
+%attr(755,root,root) %ghost %{_libdir}/libxcb-sync.so.1
 %attr(755,root,root) %{_libdir}/libxcb-xevie.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xevie.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xf86dri.so.*.*.*
@@ -182,18 +181,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xfixes.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xinerama.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xinerama.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xkb.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xkb.so.1
 %attr(755,root,root) %{_libdir}/libxcb-xprint.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xprint.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xselinux.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xselinux.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xtest.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xtest.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xv.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xv.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xvmc.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xvmc.so.0
-%attr(755,root,root) %{_libdir}/libxcb-xkb.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxcb-xkb.so.0
-%attr(755,root,root) %{_libdir}/libxcb-xselinux.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxcb-xselinux.so.0
 
 %files devel
 %defattr(644,root,root,755)
