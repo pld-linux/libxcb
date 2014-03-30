@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	graphviz	# do not require graphviz in doc regeneration
-#
+
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
 Version:	1.10
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
@@ -38,10 +38,14 @@ libxcb provides an interface to the X Window System protocol, slated
 to replace the current Xlib interface. It has several advantages over
 Xlib, including:
 - size: small library and lower memory footprint
-- latency hiding: batch several requests and wait for the replies later
-- direct protocol access: one-to-one mapping between interface and protocol
-- proven thread support: transparently access XCB from multiple threads
-- easy extension implementation: interfaces auto-generated from XML-XCB
+- latency hiding: batch several requests and wait for the replies
+  later
+- direct protocol access: one-to-one mapping between interface and
+  protocol
+- proven thread support: transparently access XCB from multiple
+  threads
+- easy extension implementation: interfaces auto-generated from
+  XML-XCB
 
 Xlib can also use XCB as a transport layer, allowing software to make
 requests and receive responses with both, which eases porting to XCB.
@@ -101,6 +105,9 @@ Statyczna biblioteka XCB.
 Summary:	XCB library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki XCB
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API and internal documentation for XCB library.
