@@ -6,13 +6,13 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.11.1
+Version:	1.12
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	f97a65e6158775de518ac391935634c2
-URL:		http://xcb.freedesktop.org/
+Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+# Source0-md5:	28e552bd78bc1050b6b26ca1db0e5bb6
+URL:		https://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
@@ -24,7 +24,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.11
+BuildRequires:	xcb-proto >= 1.12
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -129,6 +129,9 @@ Dokumentacja API biblioteki XCB.
 %{__automake}
 %configure \
 	--enable-selinux \
+	--enable-xevie \
+	--enable-xinput \
+	--enable-xprint \
 	--disable-silent-rules
 %{__make}
 
@@ -189,6 +192,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xfixes.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xinerama.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xinerama.so.0
+%attr(755,root,root) %{_libdir}/libxcb-xinput.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-xinput.so.0
 %attr(755,root,root) %{_libdir}/libxcb-xkb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-xkb.so.1
 %attr(755,root,root) %{_libdir}/libxcb-xprint.so.*.*.*
@@ -225,6 +230,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libxcb-xf86dri.so
 %attr(755,root,root) %{_libdir}/libxcb-xfixes.so
 %attr(755,root,root) %{_libdir}/libxcb-xinerama.so
+%attr(755,root,root) %{_libdir}/libxcb-xinput.so
 %attr(755,root,root) %{_libdir}/libxcb-xkb.so
 %attr(755,root,root) %{_libdir}/libxcb-xprint.so
 %attr(755,root,root) %{_libdir}/libxcb-xselinux.so
@@ -251,6 +257,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-xf86dri.la
 %{_libdir}/libxcb-xfixes.la
 %{_libdir}/libxcb-xinerama.la
+%{_libdir}/libxcb-xinput.la
 %{_libdir}/libxcb-xkb.la
 %{_libdir}/libxcb-xprint.la
 %{_libdir}/libxcb-xselinux.la
@@ -258,7 +265,33 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-xv.la
 %{_libdir}/libxcb-xvmc.la
 %{_includedir}/xcb
-%{_pkgconfigdir}/xcb*.pc
+%{_pkgconfigdir}/xcb.pc
+%{_pkgconfigdir}/xcb-composite.pc
+%{_pkgconfigdir}/xcb-damage.pc
+%{_pkgconfigdir}/xcb-dpms.pc
+%{_pkgconfigdir}/xcb-dri2.pc
+%{_pkgconfigdir}/xcb-dri3.pc
+%{_pkgconfigdir}/xcb-glx.pc
+%{_pkgconfigdir}/xcb-present.pc
+%{_pkgconfigdir}/xcb-randr.pc
+%{_pkgconfigdir}/xcb-record.pc
+%{_pkgconfigdir}/xcb-render.pc
+%{_pkgconfigdir}/xcb-res.pc
+%{_pkgconfigdir}/xcb-screensaver.pc
+%{_pkgconfigdir}/xcb-shape.pc
+%{_pkgconfigdir}/xcb-shm.pc
+%{_pkgconfigdir}/xcb-sync.pc
+%{_pkgconfigdir}/xcb-xevie.pc
+%{_pkgconfigdir}/xcb-xf86dri.pc
+%{_pkgconfigdir}/xcb-xfixes.pc
+%{_pkgconfigdir}/xcb-xinerama.pc
+%{_pkgconfigdir}/xcb-xinput.pc
+%{_pkgconfigdir}/xcb-xkb.pc
+%{_pkgconfigdir}/xcb-xprint.pc
+%{_pkgconfigdir}/xcb-xselinux.pc
+%{_pkgconfigdir}/xcb-xtest.pc
+%{_pkgconfigdir}/xcb-xv.pc
+%{_pkgconfigdir}/xcb-xvmc.pc
 %{_mandir}/man3/xcb-examples.3*
 %{_mandir}/man3/xcb-requests.3*
 %{_mandir}/man3/xcb_*.3*
@@ -285,6 +318,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb-xf86dri.a
 %{_libdir}/libxcb-xfixes.a
 %{_libdir}/libxcb-xinerama.a
+%{_libdir}/libxcb-xinput.a
 %{_libdir}/libxcb-xkb.a
 %{_libdir}/libxcb-xprint.a
 %{_libdir}/libxcb-xselinux.a
