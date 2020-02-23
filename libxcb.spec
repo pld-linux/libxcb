@@ -6,29 +6,31 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.13.1
+Version:	1.14
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	f33cdfc67346f7217a9326c0d8679975
+#Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.xz
+# Source0-md5:	f90b6e4541e9518b4c373b734f475ae7
 URL:		https://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	check >= 0.9.4
 BuildRequires:	doxygen
 %{?with_graphviz:BuildRequires:	graphviz}
-BuildRequires:	libpthread-stubs >= 0.3
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	xcb-proto >= 1.13
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xcb-proto >= 1.14
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.18
+BuildRequires:	xz
 Requires:	xorg-lib-libXau >= 0.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -79,7 +81,6 @@ Summary:	Header files for XCB library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki XCB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libpthread-stubs >= 0.3
 Requires:	xorg-lib-libXau-devel >= 0.99.2
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-xproto-devel
@@ -151,7 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING NEWS README
+%doc COPYING NEWS README.md
 %attr(755,root,root) %{_libdir}/libxcb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb.so.1
 %attr(755,root,root) %{_libdir}/libxcb-composite.so.*.*.*
