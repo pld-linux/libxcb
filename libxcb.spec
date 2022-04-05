@@ -7,12 +7,13 @@ Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
 Version:	1.14
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 #Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.xz
 # Source0-md5:	f90b6e4541e9518b4c373b734f475ae7
+Patch0:		%{name}-python3.patch
 URL:		https://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -22,8 +23,8 @@ BuildRequires:	doxygen
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	python >= 1:2.6
-BuildRequires:	python-modules >= 1:2.6
+BuildRequires:	python3
+BuildRequires:	python3-modules
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xcb-proto >= 1.14
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
@@ -117,6 +118,7 @@ Dokumentacja API biblioteki XCB.
 
 %prep
 %setup -q
+%patch0 -p1
 %if %{without graphviz}
 %{__sed} -i -e 's/HAVE_DOT               = YES/HAVE_DOT               = NO/g' doc/xcb.doxygen.in
 %endif
