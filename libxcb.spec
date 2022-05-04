@@ -25,6 +25,7 @@ BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python3
 BuildRequires:	python3-modules
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xcb-proto >= 1.14
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
