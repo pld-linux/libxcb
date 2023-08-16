@@ -6,14 +6,13 @@
 Summary:	X protocol C-language Binding library
 Summary(pl.UTF-8):	XCB - biblioteka dowiązań języka C do protokołu X
 Name:		libxcb
-Version:	1.15
+Version:	1.16
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.xz
-# Source0-md5:	39c0fc337e738ad6c908e7cce90957d0
-Patch0:		%{name}-python3.patch
+# Source0-md5:	c769f93c254263077df62404661b710d
 URL:		https://xcb.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -23,11 +22,11 @@ BuildRequires:	doxygen
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	python3
-BuildRequires:	python3-modules
+BuildRequires:	python3 >= 1:3.0
+BuildRequires:	python3-modules >= 1:3.0
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	xcb-proto >= 1.14
+BuildRequires:	xcb-proto >= 1.16
 BuildRequires:	xorg-lib-libXau-devel >= 0.99.2
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-xproto-devel
@@ -119,7 +118,6 @@ Dokumentacja API biblioteki XCB.
 
 %prep
 %setup -q
-%patch0 -p1
 %if %{without graphviz}
 %{__sed} -i -e 's/HAVE_DOT               = YES/HAVE_DOT               = NO/g' doc/xcb.doxygen.in
 %endif
@@ -160,6 +158,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libxcb-composite.so.0
 %attr(755,root,root) %{_libdir}/libxcb-damage.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-damage.so.0
+%attr(755,root,root) %{_libdir}/libxcb-dbe.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxcb-dbe.so.0
 %attr(755,root,root) %{_libdir}/libxcb-dpms.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-dpms.so.0
 %attr(755,root,root) %{_libdir}/libxcb-dri2.so.*.*.*
@@ -215,6 +215,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libxcb.so
 %attr(755,root,root) %{_libdir}/libxcb-composite.so
 %attr(755,root,root) %{_libdir}/libxcb-damage.so
+%attr(755,root,root) %{_libdir}/libxcb-dbe.so
 %attr(755,root,root) %{_libdir}/libxcb-dpms.so
 %attr(755,root,root) %{_libdir}/libxcb-dri2.so
 %attr(755,root,root) %{_libdir}/libxcb-dri3.so
@@ -242,6 +243,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb.la
 %{_libdir}/libxcb-composite.la
 %{_libdir}/libxcb-damage.la
+%{_libdir}/libxcb-dbe.la
 %{_libdir}/libxcb-dpms.la
 %{_libdir}/libxcb-dri2.la
 %{_libdir}/libxcb-dri3.la
@@ -270,6 +272,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/xcb.pc
 %{_pkgconfigdir}/xcb-composite.pc
 %{_pkgconfigdir}/xcb-damage.pc
+%{_pkgconfigdir}/xcb-dbe.pc
 %{_pkgconfigdir}/xcb-dpms.pc
 %{_pkgconfigdir}/xcb-dri2.pc
 %{_pkgconfigdir}/xcb-dri3.pc
@@ -303,6 +306,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libxcb.a
 %{_libdir}/libxcb-composite.a
 %{_libdir}/libxcb-damage.a
+%{_libdir}/libxcb-dbe.a
 %{_libdir}/libxcb-dpms.a
 %{_libdir}/libxcb-dri2.a
 %{_libdir}/libxcb-dri3.a
